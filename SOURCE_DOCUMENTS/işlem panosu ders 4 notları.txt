@@ -1,0 +1,57 @@
+- If-Then-Else-End If: Koşullu ifadeleri yönetmek için kullanılır. Örneğin, bir hücredeki değerin belirli bir değerden büyük veya küçük olup olmadığını kontrol etmek için kullanılabilir. Aşağıdaki örnek, hücre A1'deki değerin 10'dan büyük olup olmadığını kontrol eder:
+
+If Range("A1").Value > 10 Then
+    MsgBox "A1 is greater than 10"
+Else
+    MsgBox "A1 is less than or equal to 10"
+End If
+
+- Select-Case: Birden fazla koşulu yönetmek için kullanılır. Örneğin, bir hücredeki değere göre farklı işlemler yapmak için kullanılabilir. Aşağıdaki örnek, hücre A1'deki değere göre farklı mesajlar gösterir:
+
+Select Case Range("A1").Value
+    Case "Red"
+        MsgBox "The color is red."
+    Case "Green"
+        MsgBox "The color is green."
+    Case "Blue"
+        MsgBox "The color is blue."
+    Case Else
+        MsgBox "The color is not red, green, or blue."
+End Select
+
+- For-Next: Belirli bir sayıda tekrarlamak için kullanılır. Örneğin, belirli bir aralıktaki hücreleri doldurmak için kullanılabilir. Aşağıdaki örnek, hücreler A1'den A10'a kadar sayılarla doldurur:
+
+For i = 1 To 10
+    Range("A" & i).Value = i
+Next i
+
+- Do-While / Do-Until (For Next): Belirli bir koşul sağlanana kadar tekrarlamak için kullanılır. Örneğin, belirli bir hücredeki değer belirli bir değere eşit olana kadar tekrarlanabilir. Aşağıdaki örnek, hücre A1'deki değer 10'dan küçük olduğu sürece döngüyü tekrarlar:
+
+Do While Range("A1").Value < 10
+    Range("A1").Value = Range("A1").Value + 1
+Loop
+
+- Go To: Belirli bir satıra veya etikete atlamak için kullanılır. Örneğin, belirli bir koşul sağlandığında belirli bir satıra atlamak için kullanılabilir. Aşağıdaki örnek, hücre A1'deki değer 10'dan büyük olduğunda belirli bir satıra atlar:
+
+If Range("A1").Value > 10 Then
+    GoTo Line1
+End If
+
+MsgBox "A1 is less than or equal to 10"
+
+Line1:
+MsgBox "A1 is greater than 10"
+
+- Algoritma hatası - Algoritmaya dön: Hata ayıklama işlemleri için kullanılır. Örneğin, bir hata oluştuğunda kodun belirli bir satırına geri dönmek için kullanılabilir. Aşağıdaki örnek, hata oluştuğunda kodun başlangıcına geri döner:
+
+On Error GoTo ErrorHandler
+
+' Code that might cause an error
+
+Exit Sub
+
+ErrorHandler:
+MsgBox "An error occurred. Returning to the beginning of the code."
+GoTo BeginningOfCode
+
+- Harf hatası ise VBA editörü highlighted olur: Hata ayıklama işlemleri için kullanılır. Örneğin, bir değişken adı yanlış yazıldığında veya tanımlanmadığında hata ayıklama işlemleri için kullanılabilir. Aşağıdaki örnek, değişken adı yanlış yazıldığında VBA editöründe ilgili sat
